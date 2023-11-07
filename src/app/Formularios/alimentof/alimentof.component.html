@@ -1,0 +1,45 @@
+<form [formGroup]="alimentosForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Shipping Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Tipo de alimento" formControlName="tipoalimento">
+            <mat-error *ngIf="alimentosForm.controls['tipoalimento'].hasError('required')">
+              Nombre del alimento es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Etapa de Crecimiento" formControlName="etapas">
+            <mat-error *ngIf="alimentosForm.controls['etapas'].hasError('required')">
+              La etapa de crecimiento es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Tipo de animal" formControlName="tipoa">
+              <mat-option value="Gato">Gato</mat-option>
+              <mat-option value="Perro">Perro</mat-option>
+            </mat-select>
+            <mat-error *ngIf="alimentosForm.controls['tipoa'].hasError('required')">
+              Genero es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!alimentosForm.valid">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

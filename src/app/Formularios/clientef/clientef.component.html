@@ -1,0 +1,60 @@
+<form [formGroup]="usuarioForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Crear nuevo usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cedula" formControlName="cedula">
+            <mat-error *ngIf="usuarioForm.controls['cedula'].hasError('required')">
+              El campo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre" formControlName="nombre">
+            <mat-error *ngIf="usuarioForm.controls['nombre'].hasError('required')">
+              El campo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellido" formControlName="apellido">
+            <mat-error *ngIf="usuarioForm.controls['apellido'].hasError('required')">
+              El campo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Direccion" formControlName="direccion"></textarea>
+            <mat-error *ngIf="usuarioForm.controls['direccion'].hasError('required')">
+              El campo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono" formControlName="telefono">
+            <mat-error *ngIf="usuarioForm.controls['telefono'].hasError('required')">
+              El campo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!usuarioForm.valid">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

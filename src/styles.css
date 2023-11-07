@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    font-size: 14px;
+    width: 100% !important;
+  }
+  
+  
+.container{
+    margin: 20px;
+    padding: 20px;
+  }
+
+  
+.mat-mdc-card-header{
+  color: white;
+
+}

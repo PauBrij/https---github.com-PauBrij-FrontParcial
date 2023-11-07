@@ -1,0 +1,90 @@
+<form [formGroup]="MascotaForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Crear nuevo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Raza" formControlName="Raza">
+            <mat-error *ngIf="MascotaForm.controls['Raza'].hasError('required')">
+              Raza de la mascota es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Edad" formControlName="Edad">
+            <mat-error *ngIf="MascotaForm.controls['Edad'].hasError('required')">
+              Edad de la mascota es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Cliente" formControlName="Cliente">
+              <mat-option *ngFor="let cliente of clientes" [value]="cliente.value">
+                {{ cliente.viewValue }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="MascotaForm.controls['Cliente'].hasError('required')">
+              Cliente es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Tipo de animal" formControlName="Tipo">
+              <mat-option value="Gato">Gato</mat-option>
+              <mat-option value="Perro">Perro</mat-option>
+            </mat-select>
+            <mat-error *ngIf="MascotaForm.controls['Tipo'].hasError('required')">
+              Genero es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Genero" formControlName="Genero">
+              <mat-option value="Masculino">Masculino</mat-option>
+              <mat-option value="Femenino">Femenino</mat-option>
+            </mat-select>
+            <mat-error *ngIf="MascotaForm.controls['Genero'].hasError('required')">
+              Genero es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Peso" formControlName="Peso">
+            <mat-error *ngIf="MascotaForm.controls['Peso'].hasError('required')">
+              Raza de la mascota es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="Alimento" formControlName="Alimentos">
+            <mat-option *ngFor="let alimento of Alimentos" [value]="alimento.value">
+              {{ alimento.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="MascotaForm.controls['Alimentos'].hasError('required')">
+            Dieta es <strong>requerido</strong>
+          </mat-error>  
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

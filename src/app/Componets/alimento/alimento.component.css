@@ -1,0 +1,22 @@
+.full-width-table {
+    width: 100%;
+  }
+  
+  
+  .opcion {
+    text-decoration: none;
+    text-decoration-color: none;
+    color: #0000FF;
+    padding: 10px;
+  }
+  
+  .opcion a:hover{
+    color: #00FF00;
+  }
+  
+  
+  .crear{
+    padding: 10px;
+    margin: 10px;
+  }
+  
